@@ -14,7 +14,10 @@ const TimelineSection = () => {
       <h1 className="title is-size-4">Career Timeline</h1>
       <Timeline lineColor={'#ddd'}>
         {experience.map(e => (
-          <TimelineItem key={e._id} dateText={e.duration} style={{ color: '#e86971' }}>
+          <TimelineItem
+            key={e._id}
+            dateText={e.duration}
+            dateInnerStyle={{ background: e.type === 'academic' ? '#7fb592' : 'e86971' }}>
             <div className="content">
               <h3 className="has-text-weight-bold is-size-6">
                 {e.position}, {e.companyName}
