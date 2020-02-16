@@ -1,15 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
-import axios from 'axios';
 
-const TimelineSection = () => {
-  const [experience, setExperience] = useState([]);
-  useEffect(() => {
-    axios('http://localhost:3000/experience')
-      .then(res => setExperience(res.data))
-      .catch(err => console.error(err));
-  }, []);
-  return (
+const TimelineSection = ({ experience }) =>
+  experience ? (
     <div>
       <h1 className="title is-size-4">Career Timeline</h1>
       <Timeline lineColor={'#ddd'}>
@@ -38,7 +31,7 @@ const TimelineSection = () => {
         ))}
       </Timeline>
     </div>
+  ) : (
+    <div>Loading...</div>
   );
-};
-
 export default TimelineSection;
