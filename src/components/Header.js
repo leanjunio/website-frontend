@@ -8,7 +8,7 @@ const Header = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios('http://localhost:3000/info');
+        const response = await axios('http://localhost:3000/api/info');
         setInfo(response.data[0]);
       } catch (error) {
         setError(error);
