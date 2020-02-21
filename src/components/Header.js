@@ -8,7 +8,7 @@ const Header = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios('http://localhost:3000/api/info');
+        const response = await axios('http://leanjunio.com/api/info');
         setInfo(response.data[0]);
       } catch (error) {
         setError(error);
@@ -18,11 +18,11 @@ const Header = () => {
 
   if (!!info) {
     return (
-      <section className="hero has-background-white is-large">
+      <section className="hero has-background-dark is-large">
         <div className="hero-body">
           <div className="container has-text-centered">
-            <p className="title">Hi there!</p>
-            <p className="subtitle">{info.header}</p>
+            <p className="title has-text-white">Hi there!</p>
+            <p className="subtitle has-text-white">{info.header}</p>
           </div>
         </div>
       </section>
