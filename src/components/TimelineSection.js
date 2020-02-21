@@ -9,7 +9,7 @@ const TimelineSection = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios('http://leanjunio.com/api/experience');
+        const response = await axios('https://leanjunio.com/api/experience');
         setExperience(response.data);
       } catch (error) {
         setError(error);
