@@ -1,5 +1,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
@@ -11,7 +12,7 @@ module.exports = {
   },
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
-    port: 8080,
+    port: process.env.PORT,
   },
   plugins: [
     new CopyWebpackPlugin([
@@ -20,6 +21,7 @@ module.exports = {
       },
     ]),
     new CleanWebpackPlugin(),
+    new Dotenv(),
   ],
   module: {
     rules: [

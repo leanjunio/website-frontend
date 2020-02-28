@@ -9,7 +9,7 @@ const SiteInfo = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios('https://leanjunio.com/api/project/website');
+        const response = await axios(process.env.API_URL + '/project/website');
         setProject(response.data);
         setTechnology(response.data.technology);
       } catch (error) {

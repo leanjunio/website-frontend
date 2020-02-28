@@ -8,7 +8,7 @@ const Header = () => {
   useEffect(() => {
     (async () => {
       try {
-        const response = await axios('https://leanjunio.com/api/info');
+        const response = await axios(process.env.API_URL + '/info');
         setInfo(response.data[0]);
       } catch (error) {
         setError(error);
