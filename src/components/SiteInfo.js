@@ -32,7 +32,6 @@ const SiteInfo = () => {
                 <div className="content">
                   <p className="is-6">Technologies used:</p>
                   <div className="tags">
-                    {/* {technology} */}
                     {technology.map((t, i) => (
                       <span key={i} className="tag">
                         {t}
@@ -43,11 +42,6 @@ const SiteInfo = () => {
               </div>
             </div>
           </div>
-          {/* <div className="is-divider-vertical" data-content="OR"></div>
-          <div className="column">
-            Column 2 <br />
-            Note: divider stretches to parent's height.
-          </div> */}
         </div>
       </div>
     );
