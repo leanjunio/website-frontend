@@ -13,7 +13,7 @@ const Contact = () => {
     },
     onSubmit: (values, { resetForm }) => {
       axios
-        .post(`http://localhost:3000/api/email`, values)
+        .post(`${process.env.API_URL}/email`, values)
         .then(res => {
           alert(`Thanks for reaching out! I'll get back to you ASAP!`);
           resetForm();
