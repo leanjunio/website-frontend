@@ -28,8 +28,8 @@ const Header = () => {
           </div>
           <div className="hero-body">
             <div className="container has-text-centered">
-              <p className="title has-text-white">Hi there!</p>
-              <p className="subtitle has-text-white">{info.header}</p>
+              <p className="title is-3 has-text-white">Hi there!</p>
+              <p className="subtitle is-5 is has-text-white">{info.header}</p>
             </div>
           </div>
         </section>

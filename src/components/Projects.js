@@ -25,10 +25,10 @@ const Projects = () => {
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-half">
-            <div className="card">
+            <div className="box">
               <div className="card-content">
                 <div className="content">
-                  <p className="title is-4">This website!</p>
+                  <h1 className="title is-6">{project.name}</h1>
                   <p className="subtitle is-6">{project.desc}!</p>
                 </div>
                 <div className="content">
