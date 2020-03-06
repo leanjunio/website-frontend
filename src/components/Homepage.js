@@ -1,8 +1,9 @@
 import React from 'react';
+
 import Header from './Header';
 import Section from './Section';
 import TimelineSection from './TimelineSection';
-import SiteInfo from './SiteInfo';
+import Projects from './Projects';
 import Contact from './Contact';
 
 const HomePage = () => (
@@ -13,7 +14,7 @@ const HomePage = () => (
     </Section>
     <Section>
       <h1 className="title is-size-4">Projects</h1>
-      <SiteInfo />
+      <Projects />
     </Section>
     <Contact />
   </div>

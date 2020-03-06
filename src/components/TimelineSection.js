@@ -2,9 +2,11 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 
+import Error from './Error';
+
 const TimelineSection = () => {
   const [experience, setExperience] = useState([]);
-  const [error, setError] = useState({});
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     (async () => {
@@ -12,12 +14,12 @@ const TimelineSection = () => {
         const response = await axios(process.env.API_URL + '/experience');
         setExperience(response.data);
       } catch (error) {
-        setError(error);
+        setError(true);
       }
     })();
   }, []);
 
-  if (!!experience) {
+  if (!error && !!experience) {
     return (
       <div>
         <h1 className="title is-size-4">Career Timeline</h1>
@@ -49,7 +51,7 @@ const TimelineSection = () => {
       </div>
     );
   } else {
-    return <div>Loading...</div>;
+    return <Error />;
   }
 };
 
