@@ -1,8 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Lato|PT+Serif&display=swap');
+
+$base-font: 'Lato', serif;
+$head-font: 'PT Serif', serif;
+
+.hero-body {
+  .title {
+    font-family: $head-font;
+  }
+  .subtitle {
+    font-family: $base-font;
+  }
+}
+
 .bg-image {
   background-image: linear-gradient(rgba(0, 0, 0, 0.568), rgba(0, 0, 0, 0.45)), url('image.jpg');
   background-size: cover;
 }
 
 .navbar-item {
+  font-family: $base-font;
   color: white;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $head-font;
+}
+
+p {
+  font-family: $base-font;
 }
