@@ -23,7 +23,10 @@ const Contact = () => {
   });
   return (
     <section className="section has-background-dark is-medium">
-      <h1 className="title is-size-4 has-text-centered has-text-white">Let's Chat!</h1>
+      <div className="content has-text-centered has-text-white">
+        <p className="title has-text-white is-size-4">Let's Chat!</p>
+        <p className="is-size-6">Feel free to reach out to me by leaving me a message below.</p>
+      </div>
       <div className="columns is-centered">
         <div className="column is-two-fifths">
           <form onSubmit={formik.handleSubmit}>

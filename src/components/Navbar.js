@@ -8,7 +8,9 @@ const Navbar = () => {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <a className="navbar-item">
-          Lean <b>Junio</b>
+          <p>
+            Lean <b>Junio</b>
+          </p>
         </a>
 
         <a
