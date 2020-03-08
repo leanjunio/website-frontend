@@ -1,10 +1,14 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const TenserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
+  optimization: {
+    minimizer: [new TenserPlugin({})],
+  },
   entry: './src/index.js',
   output: {
     path: path.resolve(__dirname, 'dist'),
