@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import * as Sentry from '@sentry/browser';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
 
 import Error from './Error';
@@ -14,6 +15,7 @@ const TimelineSection = () => {
         const response = await axios(process.env.API_URL + '/experience');
         setExperience(response.data);
       } catch (error) {
+        Sentry.captureException(error);
         setError(true);
       }
     })();

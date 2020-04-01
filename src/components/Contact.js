@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import * as Sentry from '@sentry/browser';
 import { useFormik } from 'formik';
 
 const Contact = () => {
@@ -18,7 +19,10 @@ const Contact = () => {
           alert(`Thanks for reaching out! I'll get back to you ASAP!`);
           resetForm();
         })
-        .catch(err => setError(true));
+        .catch(err => {
+          Sentry.captureException(err);
+          setError(true);
+        });
     },
   });
   return (

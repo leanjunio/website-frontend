@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import * as Sentry from '@sentry/browser';
 
 import Error from './Error';
 
@@ -15,6 +16,7 @@ const Projects = () => {
         setProject(response.data);
         setTechnology(response.data.technology);
       } catch (error) {
+        Sentry.captureException(error);
         setError(true);
       }
     })();

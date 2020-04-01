@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import * as Sentry from '@sentry/browser';
 import axios from 'axios';
 
 import Navbar from './Navbar';
@@ -14,6 +15,7 @@ const Header = () => {
         const response = await axios(process.env.API_URL + '/info');
         setInfo(response.data[0]);
       } catch (error) {
+        Sentry.captureException(error);
         setError(true);
       }
     })();
