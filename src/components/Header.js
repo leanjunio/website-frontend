@@ -13,6 +13,11 @@ const Header = () => {
     (async () => {
       try {
         const response = await axios(process.env.API_URL + '/info');
+        Sentry.addBreadcrumb({
+          category: 'XHR',
+          level: Sentry.Severity.Info,
+          data: response.data[0]
+        });
         setInfo(response.data[0]);
       } catch (error) {
         Sentry.captureException(error);

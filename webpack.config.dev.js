@@ -5,7 +5,7 @@ const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
   optimization: {
     minimizer: [new TenserPlugin({})],
   },
@@ -13,6 +13,10 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js',
+  },
+  devServer: {
+    contentBase: path.join(__dirname, 'dist'),
+    port: process.env.PORT,
   },
   plugins: [
     new CopyWebpackPlugin([
@@ -22,8 +26,8 @@ module.exports = {
     ]),
     new CleanWebpackPlugin(),
     new Dotenv({
-      path: './.env',
-      safe: true
+        path: './development.env',
+        safe: true
     }),
   ],
   module: {
