@@ -17,6 +17,7 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     port: process.env.PORT,
+    host: '0.0.0.0'
   },
   plugins: [
     new CopyWebpackPlugin([
@@ -26,7 +27,7 @@ module.exports = {
     ]),
     new CleanWebpackPlugin(),
     new Dotenv({
-        path: './development.env',
+        path: './dev.env',
         safe: true
     }),
   ],
