@@ -17,7 +17,8 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     port: process.env.PORT,
-    host: '0.0.0.0'
+    host: '0.0.0.0',
+    public: '8080:4400'
   },
   plugins: [
     new CopyWebpackPlugin([
