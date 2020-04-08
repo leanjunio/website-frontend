@@ -34,6 +34,9 @@ const Navbar = () => {
           <Link to="/about" className="navbar-item">
             About
           </Link>
+          <a href="https://mystifying-hamilton-473e5d.netlify.com" className="navbar-item">
+            Blog
+          </a>
           <Link to="/experience" className="navbar-item">
             Experience
           </Link>
