@@ -1,4 +1,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const TenserPlugin = require('terser-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
@@ -17,16 +19,21 @@ module.exports = {
   devServer: {
     contentBase: path.join(__dirname, 'dist'),
     port: process.env.PORT,
-    host: '0.0.0.0',
-    public: '8080:4400'
+    // host: '0.0.0.0',
+    // public: '8080:4400'
   },
   plugins: [
+    new HtmlWebpackPlugin(),
+    new HtmlWebpackPartialsPlugin({
+      path: './src/partials/analytics.html',
+      location: 'head',
+      priority: 'high'
+    }),
     new CopyWebpackPlugin([
       {
         from: './*.html',
       },
     ]),
-    new CleanWebpackPlugin(),
     new Dotenv({
         path: './dev.env',
         safe: true

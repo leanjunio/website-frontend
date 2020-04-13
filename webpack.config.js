@@ -1,5 +1,7 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const TenserPlugin = require('terser-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const Dotenv = require('dotenv-webpack');
 const path = require('path');
@@ -15,6 +17,12 @@ module.exports = {
     filename: 'bundle.js',
   },
   plugins: [
+    new HtmlWebpackPlugin(),
+    new HtmlWebpackPartialsPlugin({
+      path: './src/partials/analytics.html',
+      location: 'head',
+      priority: 'high'
+    }),
     new CopyWebpackPlugin([
       {
         from: './*.html',
