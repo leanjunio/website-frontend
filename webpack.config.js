@@ -23,7 +23,6 @@ module.exports = {
     new CleanWebpackPlugin(),
     new Dotenv({
       path: './.env',
-      safe: true
     }),
   ],
   module: {

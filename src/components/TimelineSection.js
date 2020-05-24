@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import * as Sentry from '@sentry/browser';
 import { Timeline, TimelineItem } from 'vertical-timeline-component-for-react';
+import axios from 'axios';
+
+import * as Sentry from '@sentry/browser';
 
 import Error from './Error';
 
