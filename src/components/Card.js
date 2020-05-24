@@ -8,7 +8,7 @@ const Card = ({ project }) => (
           <h1 className="title is-6">
             {project.link ? <a href={project.link}>{project.name}</a> : project.name}
           </h1>
-          <p className="subtitle is-6">{project.desc}!</p>
+          <p className="subtitle is-6">{project.desc}</p>
         </div>
         <div className="content">
           <div className="tags">
