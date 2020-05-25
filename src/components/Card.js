@@ -2,7 +2,7 @@ import React from 'react';
 
 const Card = ({ project }) => (
   <div className="column is-two-fifths">
-    <div className="card">
+    <div className="card project-card">
       <div className="card-content">
         <div className="content">
           <h1 className="title is-6">
