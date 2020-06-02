@@ -23,8 +23,9 @@ jobs:
         host: ${{ secrets.DO_WEBSITE_HOST }}
         username: ${{ secrets.DO_USERNAME }}
         password: ${{ secrets.DO_PASSWORD }}
-        source: "."
-        target: "/root/website/website-frontend"
+        script: |
+          cd /root/website/website-frontend
+          git pull
     - name: Docker rebuild
       run: pwd
       
