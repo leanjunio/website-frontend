@@ -17,8 +17,8 @@ jobs:
       run: |
         npm install
         npm run build --if-present
-    - name: SCP Command to Transfer Files
-      uses: appleboy/scp-action@v0.1.0
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.DO_WEBSITE_HOST }}
         username: ${{ secrets.DO_USERNAME }}
