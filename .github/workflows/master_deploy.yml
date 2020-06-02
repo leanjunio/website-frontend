@@ -23,6 +23,7 @@ jobs:
         host: ${{ secrets.DO_WEBSITE_HOST }}
         username: ${{ secrets.DO_USERNAME }}
         password: ${{ secrets.DO_PASSWORD }}
+        key: ${{ secrets.SSH_KEY }}
         script: |
           cd /root/website/website-frontend
           git pull
