@@ -1,4 +1,4 @@
-# Website-Backend
+# Website-Frontend
 
 This serves as the frontend repository for my website [leanjunio.com](https://leanjunio.com).
 
